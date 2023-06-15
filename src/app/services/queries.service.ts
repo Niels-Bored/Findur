@@ -14,7 +14,7 @@ export class QueriesService {
 
   constructor(protected httpClient: HttpClient) { }
 
-  getUsers(){
+  getStates(){
     return this.httpClient
       .get<IState[]>(
        `${this.apiUrl}/estados/`
