@@ -37,6 +37,13 @@ export class UserService {
       )
   }
 
+  getPetsUserByID(id:string){
+    return this.httpClient
+      .get<IUser>(
+       `${this.apiUrl}/mascota/usuario/`+id
+      )
+  }
+
   createUser(request: IUser) {
     return this.httpClient
       .put<IGenericResponse>(
