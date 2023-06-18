@@ -11,6 +11,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
+import { InfoComponent } from './components/info/info.component';
+import { MypetsComponent } from './components/mypets/mypets.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     CreditsComponent,
     PetsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent,
+    InfoComponent,
+    MypetsComponent
   ],
   imports: [
     BrowserModule,
