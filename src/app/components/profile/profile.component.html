@@ -28,8 +28,8 @@
       </div>
     </section>
     <section class="bottom">
-      <p class="profile-text">Nombre</p>
-      <p class="profile-text">email</p>
+      <p class="profile-text">{{this.userInfo?.nombre}} {{this.userInfo?.apellido_p}} {{this.userInfo?.apellido_m}}</p>
+      <p class="profile-text">{{this.userInfo?.email}}</p>
       <div class="buttons">
         <button routerLink="/info">Info</button>
         <button routerLink="/mypets">My Pets</button>

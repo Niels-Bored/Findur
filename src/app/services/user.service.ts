@@ -68,4 +68,8 @@ export class UserService {
       )
   }
 
+  closeSession() {
+    localStorage.removeItem('UserID');
+}
+
 }

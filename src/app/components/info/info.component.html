@@ -20,5 +20,51 @@
 </header>
 
 <section class="content">
-  
+  <form [formGroup]="updateForm" novalidate>
+    <div class="form-row">
+      <div class="txt_field">
+        <input type="text" formControlName="nombre" required>
+        <span></span>
+        <label>Name:</label>
+        <p *ngIf="this.updateForm.get('nombre')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+      <div class="txt_field">
+        <input type="text" formControlName="apellido_p" required>
+        <span></span>
+        <label>LastName:</label>
+        <p *ngIf="this.updateForm.get('apellido_p')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="txt_field">
+        <input type="text" formControlName="apellido_m" required>
+        <span></span>
+        <label>Second LastName:</label>
+        <p *ngIf="this.updateForm.get('apellido_m')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+      <div class="txt_field">
+        <input type="text" formControlName="telefono" required>
+        <span></span>
+        <label>Phone:</label>
+        <p *ngIf="this.updateForm.get('telefono')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="txt_field">
+        <input type="text" formControlName="email" required>
+        <span></span>
+        <label>Email:</label>
+        <p *ngIf="this.updateForm.get('email')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+      <div class="txt_field">
+        <input type="password" formControlName="password" required>
+        <span></span>
+        <label>Password:</label>
+        <p *ngIf="this.updateForm.get('password')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+      </div>
+    </div>
+    <div class="form-row">
+      <input class="input-button" type="submit" (click)="submit()" value="Update">
+    </div>
+  </form>
 </section>

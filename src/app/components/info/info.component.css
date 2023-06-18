@@ -119,6 +119,84 @@ header .fa-bars{
   align-items: center;
 }
 
+form{
+  margin-top: 100px;
+  padding: 20px;
+  width: 60%;
+  height: 400px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.error-field{
+  color: red;
+  font-size: 12px;
+}
+
+.form-row{
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-button{
+  width: 80%;
+  height: 50px;
+  color: white;
+  border-radius: 15px;
+  background-color: #e84393;
+}
+
+.input-button:hover{
+  color: grey;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #e84393;
+  transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #e84393;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+
 @media(max-width:991px){
 
   html{

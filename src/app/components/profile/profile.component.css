@@ -154,19 +154,21 @@ header .fa-bars{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 button{
+  margin-top: 10px;
   height: 40px;
   width: 150px;
   border-radius: 10px;
   background-color: #e84393;
   color: white;
   font-size: 15px;
-  flex-wrap: wrap;
 }
 
 button:hover{
+  color: grey;
   cursor: pointer;
   background-color: #eee;
 }

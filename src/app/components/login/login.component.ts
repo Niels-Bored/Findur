@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { ILoginResponse } from '../../models/login-response';
@@ -21,7 +22,10 @@ export class LoginComponent {
     }
   );
 
-  constructor(private userService:UserService){}
+  constructor(
+    private userService:UserService,
+    private router:Router
+    ){}
 
 
   async submit() {
@@ -40,13 +44,14 @@ export class LoginComponent {
           (res:ILoginResponse) =>
           {
             console.log(res)
+            localStorage.setItem('UserID', res.id);
             Swal.fire(
               'Welcome',
               'Succesful login',
               'success'
             ).then((result) => {
               if (result.isConfirmed) {
-
+                this.router.navigate(['/home'])
               }
             });
           },
