@@ -10,7 +10,7 @@ import { IStatus } from '../models/status';
 })
 export class QueriesService {
 
-  apiUrl:string = "25.72.113.58:5000"
+  apiUrl:string = "25.72.113.58:3000"
 
   constructor(protected httpClient: HttpClient) { }
 

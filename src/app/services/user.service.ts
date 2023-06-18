@@ -11,7 +11,7 @@ import { IGenericResponse } from '../models/generic-response';
 })
 export class UserService {
 
-  apiUrl:string = "25.72.113.58:5000"
+  apiUrl:string = "25.72.113.58:3000"
 
   constructor(protected httpClient: HttpClient) { }
 

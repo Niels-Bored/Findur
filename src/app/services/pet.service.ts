@@ -1,46 +1,52 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { IAddress } from '../models/address';
+import { IPet } from '../models/pet';
 import { IGenericResponse } from '../models/generic-response';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AddressService {
+export class PetService {
 
   apiUrl:string = "25.72.113.58:3000"
 
   constructor(protected httpClient: HttpClient) { }
 
-  getAddressByID(id:string){
+  getPets(){
     return this.httpClient
-      .get<IAddress>(
-       `${this.apiUrl}/direccion/`+id
+      .get<IPet[]>(
+       `${this.apiUrl}/mascotas/`
       )
   }
 
-  createAdress(request: IAddress) {
+  getPetByID(id:string){
+    return this.httpClient
+      .get<IPet>(
+       `${this.apiUrl}/mascota/`+id
+      )
+  }
+
+  createPet(request: IPet) {
     return this.httpClient
       .put<IGenericResponse>(
-       `${this.apiUrl}/direccion/`,
+       `${this.apiUrl}/mascota/`,
        request
       )
   }
 
-  updateAddress(request: IAddress) {
+  updatePet(request: IPet) {
     return this.httpClient
       .post<IGenericResponse>(
-       `${this.apiUrl}/direccion/`,
+       `${this.apiUrl}/mascota/`,
        request
       )
   }
 
-  deleteUser(id:string) {
+  deletePet(id:string) {
     return this.httpClient
       .delete<IGenericResponse>(
-       `${this.apiUrl}/direccion/`+id
+       `${this.apiUrl}/mascota/`+id
       )
   }
-
 }
