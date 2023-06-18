@@ -1,3 +1,5 @@
+import { IAddress } from "./address";
+
 export interface IUser {
   id:string;
   nombre:string;
@@ -6,6 +8,6 @@ export interface IUser {
   telefono:string;
   email:string;
   password:string;
-  direccion:string;
+  direccion:IAddress;
   status_conectado:string;
 }

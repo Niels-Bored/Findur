@@ -76,7 +76,7 @@ form .txt_field{
 .pass:hover{
   text-decoration: underline;
 }
-input[type="submit"]{
+.cta-button{
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -88,7 +88,7 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
 }
-input[type="submit"]:hover{
+.cta-button:hover{
   border-color: #e84393;
   transition: .5s;
 }
@@ -104,4 +104,19 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
   text-decoration: underline;
+}
+
+select{
+  border-color: #e84393;
+  font-size: 1em;
+  border-radius: 25px;
+}
+
+.atag{
+  font-size: 1em;
+  color: #666;
+}
+
+.atag:hover{
+  color:#e84393;
 }

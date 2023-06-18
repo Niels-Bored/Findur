@@ -1,41 +1,74 @@
 <div class="center">
     <h1>Signup</h1>
-    <form method="post">
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Name</label>
-      </div>
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Last name</label>
-      </div>
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Last name 2</label>
-      </div>
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Email</label>
-      </div>
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Password</label>
-      </div>
-      <div class="txt_field">
-        <input type="text" required>
-        <span></span>
-        <label>Address</label>
-      </div>
-      <div class="txt_field">
-        <input type="number" required>
-        <span></span>
-        <label>Phone number</label>
-      </div>
-      
+    <form [formGroup]="form" (ngSubmit)="signup()">
+        <div class="txt_field">
+            <input type="text" required formControlName="nombre">
+            <span></span>
+            <label>Name</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" required formControlName="apellido_p">
+            <span></span>
+            <label>Last name</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" required formControlName="apellido_m">
+            <span></span>
+            <label>Last name 2</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" required formControlName="email">
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" required formControlName="password">
+            <span></span>
+            <label>Password</label>
+        </div>
+
+        <div class="txt_field">
+            <input type="number" required formControlName="telefono">
+            <span></span>
+            <label>Phone number</label>
+        </div>
+        <a href="javascript:void(0)" (click)="displayAddress = !displayAddress" class="atag">
+            {{displayAddress ? "Hide address" : "Show Address"}}
+        </a>
+        <ng-container *ngIf="displayAddress">
+            <div class="txt_field">
+                <input type="text" required [formControl]="calleControl">
+                <span></span>
+                <label>Street</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" required [formControl]="codigo_postalControl">
+                <span></span>
+                <label>Zip</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" required [formControl]="coloniaControl">
+                <span></span>
+                <label>Suburb</label>
+            </div>
+            <div class="custom-select">
+                <select required [formControl]="id_estadoControl">
+                    <option *ngFor="let opt of states" [value]="opt.id">{{opt.nombre}}</option>
+                </select>
+            </div>
+            <div class="txt_field">
+                <input type="text" [formControl]="num_exteriorControl">
+                <span></span>
+                <label>ext number</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" required [formControl]="num_interiorControl">
+                <span></span>
+                <label>int number</label>
+            </div>
+        </ng-container>
+        <br> <br>
+        <button class="cta-button" type="submit">Signup</button>
+
     </form>
-  </div>
+</div>

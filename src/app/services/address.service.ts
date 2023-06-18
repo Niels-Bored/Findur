@@ -9,7 +9,7 @@ import { IGenericResponse } from '../models/generic-response';
 })
 export class AddressService {
 
-  apiUrl:string = "25.72.113.58:3000"
+  apiUrl:string = "http://25.65.150.109:3000"
 
   constructor(protected httpClient: HttpClient) { }
 
