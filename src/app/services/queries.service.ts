@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { IState } from '../models/state';
-import { IGenericResponse } from '../models/generic-response';
-
+import { IBreed } from '../models/breed';
+import { IStatus } from '../models/status';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,18 @@ export class QueriesService {
     return this.httpClient
       .get<IState[]>(
        `${this.apiUrl}/estados/`
+      )
+  }
+  getBreeds(){
+    return this.httpClient
+      .get<IBreed[]>(
+       `${this.apiUrl}/razas/`
+      )
+  }
+  getStatus(){
+    return this.httpClient
+      .get<IStatus[]>(
+       `${this.apiUrl}/status/`
       )
   }
 }
