@@ -5,6 +5,7 @@ import { ILoginRequest } from '../models/login-request';
 import { IUser } from '../models/user';
 import { ILoginResponse } from '../models/login-response';
 import { IGenericResponse } from '../models/generic-response';
+import { IInsertResponse } from '../models/insert-response';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,7 @@ export class UserService {
 
   createUser(request: IUser) {
     return this.httpClient
-      .put<IGenericResponse>(
+      .put<IInsertResponse>(
        `${this.apiUrl}/usuario/`,
        request
       )

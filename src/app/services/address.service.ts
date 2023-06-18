@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { IAddress } from '../models/address';
 import { IGenericResponse } from '../models/generic-response';
+import { IInsertResponse } from '../models/insert-response';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class AddressService {
 
   createAdress(request: IAddress) {
     return this.httpClient
-      .put<IGenericResponse>(
+      .put<IInsertResponse>(
        `${this.apiUrl}/direccion/`,
        request
       )

@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { IPet } from '../models/pet';
 import { IGenericResponse } from '../models/generic-response';
+import { IInsertResponse } from '../models/insert-response';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class PetService {
 
   createPet(request: IPet) {
     return this.httpClient
-      .put<IGenericResponse>(
+      .put<IInsertResponse>(
        `${this.apiUrl}/mascota/`,
        request
       )
