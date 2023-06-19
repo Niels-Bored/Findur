@@ -1,5 +1,28 @@
 
 <app-navbar></app-navbar>
  
-<button class="showMore">Add pet</button>
+<br><br><br><br>
+
+<section class="products" id="products">
+    <div class="box-container">
+        <ng-container *ngFor="let pet of pets;let i = index">
+            <div  class="box" >
+                <div class="image">
+                    <img class="products-img" [src]="dogImage(pet)" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3>{{pet.nombre}}</h3>
+                <div class="price">{{pet.descripcion}}</div>
+                </div>
+                <button class="contact-button" (click)="deletePet(pet)">delete</button>
+                <button class="contact-button" (click)="editPet(pet)">edit</button>
+            </div>
+        </ng-container>
+        
+    </div>  
+</section>
+
+
+<button class="showMore" routerLink="/add-pet">Add pet</button>
 

@@ -17,6 +17,7 @@ import { MypetsComponent } from './components/mypets/mypets.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddpetComponent } from './components/addpet/addpet.component';
 import { ContactownerComponent } from './components/contactowner/contactowner.component';
+import { EditpetComponent } from './components/editpet/editpet.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContactownerComponent } from './components/contactowner/contactowner.co
     MypetsComponent,
     NavbarComponent,
     AddpetComponent,
-    ContactownerComponent
+    ContactownerComponent,
+    EditpetComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { IGenericResponse } from '../models/generic-response';
 import { IInsertResponse } from '../models/insert-response';
 import { API_URL } from './constants';
 import { Router } from '@angular/router';
+import { IPet } from '../models/pet';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class UserService {
 
   getPetsUserByID(id:string){
     return this.httpClient
-      .get<IUser>(
+      .get<IPet[]>(
        `${this.apiUrl}/mascota/usuario/`+id
       )
   }
