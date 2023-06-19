@@ -34,12 +34,6 @@
     </div>
     <div class="form-row">
       <div class="txt_field">
-        <input type="date" formControlName="nacimiento" required>
-        <span></span>
-        <label>Birthdate:</label>
-        <p *ngIf="this.updateForm.get('nacimiento')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
-      </div>
-      <div class="txt_field">
         <input type="text" formControlName="genero" required>
         <span></span>
         <label>Gender:</label>
@@ -47,7 +41,7 @@
       </div>
     </div>
     <div class="form-row">
-      <input class="input-button" type="submit" (click)="submit()" value="Add">
+      <input class="input-button" type="submit" (click)="submit()" value="Update">
     </div>
   </form>
 </section>

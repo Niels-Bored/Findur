@@ -34,22 +34,22 @@ export class SignupComponent implements OnInit {
       });
   }
   form = new FormGroup({
-    nombre: new FormControl('FER', [Validators.required]),
-    apellido_p: new FormControl('GTZ', [Validators.required]),
-    apellido_m: new FormControl('SALAZAR', [Validators.required]),
-    telefono: new FormControl('123456789', [Validators.required]),
-    email: new FormControl('FERTEST@GMAIL.COM', [
+    nombre: new FormControl(),
+    apellido_p: new FormControl("",[Validators.required]),
+    apellido_m: new FormControl("",[Validators.required]),
+    telefono: new FormControl("",[Validators.required]),
+    email: new FormControl("",[
       Validators.required,
       Validators.email,
     ]),
-    password: new FormControl('1234567', [Validators.required]),
+    password: new FormControl("",[Validators.required]),
     direccion: new FormGroup({
-      calle: new FormControl('CALLE', [Validators.required]),
-      colonia: new FormControl('COLONIA', [Validators.required]),
-      num_interior: new FormControl('12', [Validators.required]),
-      num_exterior: new FormControl('15', [Validators.required]),
-      codigo_postal: new FormControl('21234', [Validators.required]),
-      id_estado: new FormControl(1, [Validators.required]),
+      calle: new FormControl("",[Validators.required]),
+      colonia: new FormControl("",[Validators.required]),
+      num_interior: new FormControl("",[Validators.required]),
+      num_exterior: new FormControl("",[Validators.required]),
+      codigo_postal: new FormControl("",[Validators.required]),
+      id_estado: new FormControl("", [Validators.required]),
     }),
   });
 
