@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 import { SendmailService } from 'src/app/services/sendmail.service';
+import { IUser } from '../../models/user';
 import { IMail } from 'src/app/models/mail';
 import { IGenericResponse } from '../../models/generic-response';
 import Swal from 'sweetalert2';
 
+
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-contactowner',
+  templateUrl: './contactowner.component.html',
+  styleUrls: ['./contactowner.component.css']
 })
-export class ContactComponent {
+export class ContactownerComponent {
   submitted = false
+  ownerID:string = ""
+  email:string = ""
+  name:string = ""
 
   mailForm: FormGroup = new FormGroup(
     {
@@ -25,8 +32,23 @@ export class ContactComponent {
 
   constructor(
     private sendMailService:SendmailService,
-    private router:Router
-  ){}
+    private userService:UserService,
+    private router:Router,
+    private activatedRoute:ActivatedRoute
+  ){
+    this.activatedRoute.params.subscribe(params=>{
+      this.ownerID = params['ownerID'];
+      this.userService
+      .getUserByID(this.ownerID)
+      .subscribe(
+          (user: IUser) => {
+              console.log(user)
+              this.email=user.email || ""
+              this.name=user.nombre || ""
+          }
+        );
+    })
+  }
 
   async submit() {
     if(this.mailForm.invalid){
@@ -38,12 +60,13 @@ export class ContactComponent {
 
     let mail: IMail
 
-    let content = this.mailForm.get('name')?.value + " says: "+
+    let content = "Hey "+this.name+",\n "+
+                  this.mailForm.get('name')?.value + " says: "+
                   "\""+this.mailForm.get('message')?.value+"\""+
                   "\nEmail: "+this.mailForm.get('email')?.value +
                   " \nPhone: "+this.mailForm.get('number')?.value
 
-    mail = {"mail":"petfindur@gmail.com", "body":content}
+    mail = {"mail":this.email, "body":content}
 
     await this.sendMailService
         .sendMail(mail)

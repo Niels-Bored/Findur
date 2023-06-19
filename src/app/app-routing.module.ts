@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { InfoComponent } from './components/info/info.component';
 import { MypetsComponent } from './components/mypets/mypets.component';
+import { ContactownerComponent } from './components/contactowner/contactowner.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'profile',component:ProfileComponent},
   {path:'info',component:InfoComponent},
-  {path:'mypets',component:MypetsComponent}
+  {path:'mypets',component:MypetsComponent},
+  {path:'contactowner/:ownerID',component:ContactownerComponent}
 ];
 
 @NgModule({

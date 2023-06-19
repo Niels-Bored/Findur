@@ -5,13 +5,13 @@
         <input type="text" formControlName="nombre" required>
         <span></span>
         <label>UserName</label>
-        <p *ngIf="this.loginForm.get('nombre')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+        <p *ngIf="this.loginForm.get('nombre')!.hasError('required') && submitted" class="error-field">Mandatory field!</p>
       </div>
       <div class="txt_field">
         <input type="password" formControlName="password" required>
         <span></span>
         <label>Password</label>
-        <p *ngIf="this.loginForm.get('password')!.hasError('required') && submitted" class="error-field">Campo Obligatorio</p>
+        <p *ngIf="this.loginForm.get('password')!.hasError('required') && submitted" class="error-field">Mandatory field!</p>
       </div>
       <div class="pass">Forgot Password?</div>
       <input type="submit" value="Login" (click)="submit()">

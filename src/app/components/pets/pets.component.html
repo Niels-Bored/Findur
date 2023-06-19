@@ -3,23 +3,23 @@
 <br><br><br><br>
 
 <section class="products" id="products">
-    <h1 class="heading">lastest <span>products</span></h1>
+    <h1 class="heading">lastest <span>dogs</span></h1>
     <div class="box-container">
         <ng-container *ngFor="let pet of pets;let i = index">
             <div  class="box" *ngIf="i < displayItems">
                 <div class="image">
                     <img class="products-img" [src]="dogImage(pet)" alt="">
-                    
+
                 </div>
                 <div class="content">
                     <h3>{{pet.nombre}}</h3>
                     <div class="price">{{pet.descripcion}}</div>
-                    <button class="contact-button">Contact owner</button>
+                    <button class="contact-button" (click)="contactOwner(pet.id_usuario)">Contact owner</button>
                 </div>
             </div>
         </ng-container>
-        
-    </div>  
-    <br> <br> 
+
+    </div>
+    <br> <br>
     <button class="showMore" *ngIf="showMoreButton" type="button" (click)="loadBlock()">Show more</button>
 </section>

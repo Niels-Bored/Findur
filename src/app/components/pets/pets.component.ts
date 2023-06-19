@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { IPet } from 'src/app/models/pet';
 import { PetService } from 'src/app/services/pet.service';
@@ -12,17 +13,14 @@ import { NO_IMAGE, PETS_IMAGES } from './constants';
 })
 export class PetsComponent implements OnInit{
 
-
-  
-
-  
   pageSize = 3;
   displayItems = this.pageSize;
   pets!:IPet[]
   constructor(
-    private petService:PetService
+    private petService:PetService,
+    private router:Router
   ){
-    
+
   }
 
   loadBlock(){
@@ -50,5 +48,8 @@ export class PetsComponent implements OnInit{
     return PETS_IMAGES[id] || NO_IMAGE;
   }
 
-  
+  contactOwner(ownerID:string){
+    this.router.navigate(['/contactowner',ownerID]);
+  }
+
 }

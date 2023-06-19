@@ -16,6 +16,7 @@ import { InfoComponent } from './components/info/info.component';
 import { MypetsComponent } from './components/mypets/mypets.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddpetComponent } from './components/addpet/addpet.component';
+import { ContactownerComponent } from './components/contactowner/contactowner.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddpetComponent } from './components/addpet/addpet.component';
     InfoComponent,
     MypetsComponent,
     NavbarComponent,
-    AddpetComponent
+    AddpetComponent,
+    ContactownerComponent
   ],
   imports: [
     BrowserModule,
