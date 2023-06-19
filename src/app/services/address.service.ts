@@ -4,13 +4,14 @@ import { Observable, of } from "rxjs";
 import { IAddress } from '../models/address';
 import { IGenericResponse } from '../models/generic-response';
 import { IInsertResponse } from '../models/insert-response';
+import { API_URL } from './constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddressService {
 
-  apiUrl:string = "http://25.65.150.109:3000"
+  apiUrl:string = API_URL
 
   constructor(protected httpClient: HttpClient) { }
 

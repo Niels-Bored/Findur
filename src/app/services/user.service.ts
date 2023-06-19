@@ -6,15 +6,17 @@ import { IUser } from '../models/user';
 import { ILoginResponse } from '../models/login-response';
 import { IGenericResponse } from '../models/generic-response';
 import { IInsertResponse } from '../models/insert-response';
+import { API_URL } from './constants';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  apiUrl:string = "http://25.65.150.109:3000"
+  apiUrl:string = API_URL
 
-  constructor(protected httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient,private router:Router) { }
 
   login(request: ILoginRequest) {
     return this.httpClient
@@ -70,6 +72,7 @@ export class UserService {
 
   closeSession() {
     localStorage.removeItem('UserID');
+    this.router.navigate(['/home'])
 }
 
 }

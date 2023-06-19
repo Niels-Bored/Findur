@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'profile',component:ProfileComponent},
   {path:'info',component:InfoComponent},
-  {path:'mypets',component:InfoComponent}
+  {path:'mypets',component:MypetsComponent}
 ];
 
 @NgModule({

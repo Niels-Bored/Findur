@@ -4,13 +4,14 @@ import { Observable, of } from "rxjs";
 import { IPet } from '../models/pet';
 import { IGenericResponse } from '../models/generic-response';
 import { IInsertResponse } from '../models/insert-response';
+import { API_URL } from './constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetService {
 
-  apiUrl:string = "25.72.113.58:3000"
+  apiUrl:string = API_URL
 
   constructor(protected httpClient: HttpClient) { }
 

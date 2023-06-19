@@ -1,0 +1,1 @@
+export const API_URL:string = "http://25.65.150.109:3000"

@@ -4,13 +4,14 @@ import { Observable, of } from "rxjs";
 import { IState } from '../models/state';
 import { IBreed } from '../models/breed';
 import { IStatus } from '../models/status';
+import { API_URL } from './constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QueriesService {
 
-  apiUrl:string = "http://25.65.150.109:3000"
+  apiUrl:string = API_URL
 
   constructor(protected httpClient: HttpClient) { }
 

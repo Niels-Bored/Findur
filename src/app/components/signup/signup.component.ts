@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit {
       calle: new FormControl('CALLE', [Validators.required]),
       colonia: new FormControl('COLONIA', [Validators.required]),
       num_interior: new FormControl('12', [Validators.required]),
-      num_exterior: new FormControl('A', [Validators.required]),
+      num_exterior: new FormControl('15', [Validators.required]),
       codigo_postal: new FormControl('21234', [Validators.required]),
       id_estado: new FormControl(1, [Validators.required]),
     }),
@@ -76,6 +76,7 @@ export class SignupComponent implements OnInit {
           console.log(err);
         },
         next: (responseDirection) => {
+          console.log(responseDirection)
           this.usersService.createUser({
             nombre,
             apellido_p,
@@ -83,7 +84,8 @@ export class SignupComponent implements OnInit {
             telefono,
             email,
             password,
-            
+            direccion: responseDirection.id,
+            status_conectado: "true"
           } as any).pipe(take(1)).subscribe({
             error: (err) => {
               console.log(err);

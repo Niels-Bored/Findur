@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { InfoComponent } from './components/info/info.component';
 import { MypetsComponent } from './components/mypets/mypets.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddpetComponent } from './components/addpet/addpet.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MypetsComponent } from './components/mypets/mypets.component';
     SignupComponent,
     ProfileComponent,
     InfoComponent,
-    MypetsComponent
+    MypetsComponent,
+    NavbarComponent,
+    AddpetComponent
   ],
   imports: [
     BrowserModule,

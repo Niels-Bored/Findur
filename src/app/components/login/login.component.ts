@@ -50,8 +50,9 @@ export class LoginComponent {
               'Succesful login',
               'success'
             ).then((result) => {
+              
               if (result.isConfirmed) {
-                this.router.navigate(['/home'])
+                this.router.navigate(['/profile'])
               }
             });
           },

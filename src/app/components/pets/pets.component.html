@@ -1,172 +1,25 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-<header>
-
-    <input type="checkbox" name="" id="toggler">
-    <label for="toggler" class="fas fa-bars"></label>
-
-    <a href="#" class="logo">findur <span>.</span></a>
-    <nav class="navbar">
-        <a routerLink="/home">home</a>
-        <a routerLink="/pets">Pets</a>
-        <a routerLink="/credits">Volunteers</a>
-        <a routerLink="/contact">Contact</a>
-    </nav>
-
-    <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-bell"></a>
-        <a href="#" class="fas fa-user"></a>
-    </div>
-</header>
+<app-navbar></app-navbar>
 
 <br><br><br><br>
 
 <section class="products" id="products">
     <h1 class="heading">lastest <span>products</span></h1>
     <div class="box-container">
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog1.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
+        <ng-container *ngFor="let pet of pets;let i = index">
+            <div  class="box" *ngIf="i < displayItems">
+                <div class="image">
+                    <img class="products-img" [src]="dogImage(pet)" alt="">
+                    
+                </div>
+                <div class="content">
+                    <h3>{{pet.nombre}}</h3>
+                    <div class="price">{{pet.descripcion}}</div>
+                    <button class="contact-button">Contact owner</button>
                 </div>
             </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog2.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog3.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog4.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog5.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog6.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog7.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog8.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-
-        <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-                <img class="products-img" src="../../../assets/pictures/dog9.jpg" alt="">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="car-btn">add to cart</a>
-                    <a href="#" class="fas fa-share"></a>
-                </div>
-            </div>
-            <div class="content">
-                <h3>flower pot</h3>
-                <div class="price">$12.99 <span>$15.99</span></div>
-            </div>
-        </div>
-    </div>    
+        </ng-container>
+        
+    </div>  
+    <br> <br> 
+    <button class="showMore" *ngIf="showMoreButton" type="button" (click)="loadBlock()">Show more</button>
 </section>
