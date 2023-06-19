@@ -17,7 +17,15 @@ export const PETS_IMAGES:any = {
     73: "assets/pictures/dog16.jpg",
     80: "assets/pictures/dog17.jpg",
     87: "assets/pictures/dog18.jpg",
-    92: "assets/pictures/dog19.jpg",
+    94: "assets/pictures/dog19.jpg",
+    101: "assets/pictures/dog20.jpg",
+    108: "assets/pictures/dog21.jpg",
+    115: "assets/pictures/dog22.jpg",
+    122: "assets/pictures/dog23.jpg",
+    129: "assets/pictures/dog24.jpg",
+    136: "assets/pictures/dog25.jpg",
+    143: "assets/pictures/dog26.jpg",
+    150: "assets/pictures/dog27.jpg",
 }
 
 
