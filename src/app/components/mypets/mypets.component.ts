@@ -4,6 +4,8 @@ import { IPet } from 'src/app/models/pet';
 import { UserService } from 'src/app/services/user.service';
 import { NO_IMAGE, PETS_IMAGES } from '../pets/constants';
 import { PetService } from 'src/app/services/pet.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-mypets',
@@ -16,7 +18,8 @@ export class MypetsComponent implements OnInit{
 
   constructor(
     private userService:UserService,
-    private petService:PetService
+    private petService:PetService,
+    private router:Router
   ){}
   ngOnInit(): void {
     this.getPets()
@@ -49,6 +52,8 @@ this.petService.deletePet(pet.id)
   }
 
   editPet(pet:IPet){
+    this.router.navigate(['/edit-pet',pet.id])
+
     this.petService.updatePet(pet)
 
   }
